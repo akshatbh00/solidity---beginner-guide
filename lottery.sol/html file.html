@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lottery Machine</title>
+	<script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+	<script src="C:\Users\akshat\Downloads\lottery.sol\script.js"></script>
+	<style>
+		/* your CSS styles here */
+		body {
+			background-color: #f8f9fa;
+		}
+		h1 {
+			color: #007bff;
+		}
+		form {
+			background-color: white;
+			padding: 1rem;
+			border-radius: 0.25rem;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		}
+		input:focus {
+			outline: none;
+		}
+		button {
+			margin-top: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<h1>Lottery Machine</h1>
+	<p>Enter the lottery by sending {{entryFee}} ether to the contract address:</p>
+	<p>{{contractAddress}}</p>
+	<form onsubmit="event.preventDefault(); enterLottery()">
+		<label for="entryFee">Entry fee (in ether):</label>
+		<input type="text" id="entryFee" name="entryFee" value="0.1">
+		<button type="submit">Enter</button>
+	</form>
+	<p id="message"></p>
+	<button onclick="pickWinner()">Pick Winner</button>
+</body>
+</html>
